@@ -1,0 +1,15 @@
+const handleUpload = async () => {
+  const formData = new FormData();
+  formData.append("file", file);
+
+  console.log("Uploading file to:", "http://127.0.0.1:8000/upload/");
+  
+  try {
+    const response = await axios.post("http://127.0.0.1:8000/upload/", formData);
+    console.log("Response:", response);
+    alert("File uploaded successfully!");
+  } catch (error) {
+    console.error("Error during file upload:", error.response || error.message);
+    alert("File upload failed.");
+  }
+};
